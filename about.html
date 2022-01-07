@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>About</title>
+	<link href="style.css" rel="stylesheet" type="text/css">
+	<link rel="icon" href="photos/tree.png" type="image/png" />
+</head>
+
+<body>
+	<div class="canvas">
+		<nav class="navbar">
+			<div>
+				<a href="index.html">
+					<img class="primary-icon" src="photos/tree.png" />
+				</a>
+			</div>
+			<ul class="nav-list" id="navi-list">
+				<li class="list-item"><a href="index.html">HOME</a></li>
+				<li class="list-item"><a href="blog.html">BLOG</a></li>
+				<li class="list-item"><a href="projects.html">PROJECTS</a></li>
+				<li class="list-item"><a href="AbeLeiningerResume.pdf" target="_blank">RESUME</a></li>
+				<li class="list-item active-page"><a href="about.html">ABOUT</a></li>
+			</ul>
+			<div class="menu" id="toggle-button">
+				<div class="menu-line"></div>
+				<div class="menu-line"></div>
+				<div class="menu-line"></div>
+			</div>
+		</nav>
+
+		<div class="page-intro">
+			<h2>About</h2>
+		</div>
+
+		<hr>
+
+		<div class="body-intro">
+			<img src="photos/StudentID-portrait.jpg" alt="Abe Leinger Portrait" width="300" height="400">
+			<div class="body-intro-text">
+				<p>Greetings! My name is Abe Leininger, and I'm from French Lick, Indiana home of French Lick and West
+					Baden
+					Historical Hotels! I grew up in Bloomington from Kindergarten until the eighth grade, then moved to
+					French Lick my freshman year of high school. But at last, I am again reunited with this beautiful
+					city!
+				</p>
+				<h2>Contacts</h2>
+				<ul class="contact-list">
+					<li class="contact-list-item"><a href="#" target="_blank"><img src="symbols/linkedin.png"></a></li>
+					<li class="contact-list-item"><a href="#" target="_blank"><img src="symbols/github.png"></a></li>
+					<li class="contact-list-item"><a href="#" target="_blank"><img src="symbols/mail.png"></a></li>
+				</ul>
+			</div>
+		</div>
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		<hr>
+
+		<footer class="footer">
+			<div class="copyright">
+				<a>&copy; Abe Leininger 2022</a>
+			</div>
+			<ul class="footer-list">
+				<li class="footer-list-item"><a href="https://www.linkedin.com/in/abraham-leininger-7538531b7/"
+						target="_blank"><img src="symbols/linkedin.png" alt="Linkedin Logo" width="25" height="25"></a>
+				</li>
+				<li class="footer-list-item"><a href="https://github.com/abeleinin" target="_blank"><img
+							src="symbols/github.png" alt="Github Logo" width="25" height="25"></a></li>
+				<li class="footer-list-item"><a href="mailto:aleinin@iu.edu"><img src="symbols/mail.png"
+							alt="Envelope Graphic" width="30" height="25"></a></li>
+			</ul>
+		</footer>
+
+	</div>
+</body>
+<script>
+	const toggleButton = document.getElementById('toggle-button')
+	const naviList = document.getElementById('navi-list')
+
+	toggleButton.addEventListener('click', () => {
+		naviList.classList.toggle('active');
+	})
+</script>
+
+</html>

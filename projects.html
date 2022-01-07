@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Projects</title>
+	<link href="style.css" rel="stylesheet" type="text/css">
+	<link href="projects.css" rel="stylesheet" type="text/css">
+	<link rel="icon" href="photos/tree.png" type="image/png" />
+</head>
+
+<body>
+	<div class="canvas">
+		<!--Nav Bar-->
+		<nav class="navbar">
+			<div>
+				<a href="index.html">
+					<img class="primary-icon" src="photos/tree.png" />
+				</a>
+			</div>
+			<ul class="nav-list" id="navi-list">
+				<li class="list-item"><a href="index.html">HOME</a></li>
+				<li class="list-item"><a href="blog.html">BLOG</a></li>
+				<li class="list-item active-page"><a href="projects.html">PROJECTS</a></li>
+				<li class="list-item"><a href="AbeLeiningerResume.pdf" target="_blank">RESUME</a></li>
+				<li class="list-item"><a href="about.html">ABOUT</a></li>
+			</ul>
+			<div class="menu" id="toggle-button">
+				<div class="menu-line"></div>
+				<div class="menu-line"></div>
+				<div class="menu-line"></div>
+			</div>
+		</nav>
+		<!--Page Intro-->
+		<div class="page-intro">
+			<section>
+			<h2>Personal Projects</h2>
+			<p>Archive and updates on projects!</p>
+			</section>
+		</div>
+
+		<hr>
+
+		<div class="project-status">
+            <p>Current</p>
+		</div>
+
+		<div class="project-status">
+            <p>Archive</p>
+		</div>
+		<hr>
+		<!--Footer-->
+		<footer class="footer">
+			<div class="copyright">
+				<a>Abe Leininger 2022</a>
+			</div>
+			<ul class="footer-list">
+				<li class="footer-list-item"><a href="https://www.linkedin.com/in/abraham-leininger-7538531b7/"
+						target="_blank"><img src="symbols/linkedin.png" alt="Linkedin Logo" width="25" height="25"></a>
+				</li>
+				<li class="footer-list-item"><a href="https://github.com/abeleinin" target="_blank"><img
+							src="symbols/github.png" alt="Github Logo" width="25" height="25"></a></li>
+				<li class="footer-list-item"><a href="mailto:aleinin@iu.edu"><img src="symbols/mail.png"
+							alt="Envelope Graphic" width="30" height="25"></a></li>
+			</ul>
+		</footer>
+	</div>
+</body>
+
+<script>
+	const toggleButton = document.getElementById('toggle-button')
+	const naviList = document.getElementById('navi-list')
+
+	toggleButton.addEventListener('click', () => {
+		naviList.classList.toggle('active');
+	})
+</script>
+
+</html>

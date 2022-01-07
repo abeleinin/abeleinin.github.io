@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Homepage</title>
+	<link href="style.css" rel="stylesheet" type="text/css">
+	<link rel="icon" href="photos/tree.png" type="image/png" />
+</head>
+
+<body>
+	<div class="canvas">
+		<nav class="navbar">
+			<div>
+				<a href="index.html">
+					<img class="primary-icon" src="photos/tree.png" />
+				</a>
+			</div>
+			<ul class="nav-list" id="navi-list">
+				<li class="list-item active-page"><a href="index.html">HOME</a></li>
+				<li class="list-item"><a href="blog.html">BLOG</a></li>
+				<li class="list-item"><a href="projects.html">PROJECTS</a></li>
+				<li class="list-item"><a href="AbeLeiningerResume.pdf">RESUME</a></li>
+				<li class="list-item"><a href="about.html">ABOUT</a></li>
+			</ul>
+			<div class="menu" id="toggle-button">
+				<div class="menu-line"></div>
+				<div class="menu-line"></div>
+				<div class="menu-line"></div>
+			</div>
+		</nav>
+
+		<div class="home-page-intro">
+			<h2>Welcome!</h2>
+			<p>My name is Abe Leininger, and I'm a Sophomore studying Computer Science at Indiana University in
+				Bloomington.</p>
+		</div>
+
+		<hr>
+
+		<div class="body-intro">
+			<img src="photos/chesscrop.jpeg" alt="Looking at chessboard" width="300" height="400">
+			<p>Hello! My name is Abe Leininger, and I just finished my first semester at IU! During the fall, I took an
+				intro to computer science course taught in Racket (Here's a project I made from this course)! I'm
+				interested in web development, autonomous vehicles, and data analytics.
+				<br><br>
+				Spring semester, I'm taking Honors Intro to Software Systems (taught in Java), Honors Discrete
+				Structure, and Introduction to Statistical Inference. I'm excited to learn Java and R this semester and
+				hope to gain valuable skills in data analytics that I can use in future projects. Additionally, I plan
+				to independently study data structures and algorithms to prepare for technical coding interviews.
+				<br><br>
+				Some of my hobbies include playing guitar and piano, reading, and playing chess.
+			</p>
+		</div>
+		<hr>
+		<div class="body-links-title">
+			<h2>What's New?</h2>
+		</div>
+		<div class="body-links">
+			<div class="body-links-block">
+				<img src="photos/new-year.jpg" alt="2022 Happy New Year" width="300" height="300">
+				<h2>Recent Post</h2>
+				<p>2022 Goals</p>
+				<a href="#">VIEW</a>
+			</div>
+			<div class="body-links-block">
+				<img src="photos/galaxy-collision.jpg" alt="Andromeda Galaxy colliding with the Milky Way" width="300" height="300">
+				<h2>Blog</h2>
+				<p>Thoughts and personal discoveries.</p>
+				<a href="blog.html">VIEW</a>
+			</div>
+			<div class="body-links-block">
+				<img src="photos/elcap-art.jpg" alt="King Chess Piece" width="300" height="300">
+				<h2>Projects</h2>
+				<p>Random Stuff I have fun doing.</p>
+				<a href="projects.html">VIEW</a>
+			</div>
+		</div>
+
+		<hr>
+
+		<footer class="footer">
+			<div class="copyright">
+				<a>&copy; Abe Leininger 2022</a>
+			</div>
+			<ul class="footer-list">
+				<li class="footer-list-item"><a href="https://www.linkedin.com/in/abraham-leininger-7538531b7/"
+						target="_blank"><img src="symbols/linkedin.png" alt="Linkedin Logo" width="25" height="25"></a>
+				</li>
+				<li class="footer-list-item"><a href="https://github.com/abeleinin" target="_blank"><img
+							src="symbols/github.png" alt="Github Logo" width="25" height="25"></a></li>
+				<li class="footer-list-item"><a href="mailto:aleinin@iu.edu"><img src="symbols/mail.png"
+							alt="Envelope Graphic" width="30" height="25"></a></li>
+			</ul>
+		</footer>
+
+	</div>
+</body>
+<script>
+	const toggleButton = document.getElementById('toggle-button')
+	const naviList = document.getElementById('navi-list')
+
+	toggleButton.addEventListener('click', () => {
+		naviList.classList.toggle('active');
+	})
+</script>
+
+</html>
