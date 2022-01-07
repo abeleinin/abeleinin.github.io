@@ -5,6 +5,7 @@
 	<title>Homepage</title>
 	<link href="style.css" rel="stylesheet" type="text/css">
 	<link rel="icon" href="photos/tree.png" type="image/png" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 </head>
 
 <body>
@@ -19,7 +20,7 @@
 				<li class="list-item active-page"><a href="index.html">HOME</a></li>
 				<li class="list-item"><a href="blog.html">BLOG</a></li>
 				<li class="list-item"><a href="projects.html">PROJECTS</a></li>
-				<li class="list-item"><a href="AbeLeiningerResume.pdf">RESUME</a></li>
+				<li class="list-item"><a href="AbeLeiningerResume.pdf" target="_blank">RESUME</a></li>
 				<li class="list-item"><a href="about.html">ABOUT</a></li>
 			</ul>
 			<div class="menu" id="toggle-button">
@@ -63,7 +64,8 @@
 				<a href="#">VIEW</a>
 			</div>
 			<div class="body-links-block">
-				<img src="photos/galaxy-collision.JPG" alt="Andromeda Galaxy colliding with the Milky Way" width="300" height="300">
+				<img src="photos/galaxy-collision.JPG" alt="Andromeda Galaxy colliding with the Milky Way" width="300"
+					height="300">
 				<h2>Blog</h2>
 				<p>Thoughts and personal discoveries.</p>
 				<a href="blog.html">VIEW</a>
@@ -95,13 +97,6 @@
 
 	</div>
 </body>
-<script>
-	const toggleButton = document.getElementById('toggle-button')
-	const naviList = document.getElementById('navi-list')
-
-	toggleButton.addEventListener('click', () => {
-		naviList.classList.toggle('active');
-	})
-</script>
+<script src="toggleButton.js"></script>
 
 </html>
