@@ -1,4 +1,4 @@
-/* || Sitewide */
+/* Sitewide */
 * {
     box-sizing: border-box;
     padding: 0;
@@ -17,9 +17,9 @@ body {
     padding: 10px;
 }
 
-/* || Nav Bar (Darkish Blue #4d7fa0) (Darkish Green #338b33)*/
+/* Navbar (Darkish Blue #4d7fa0) (Darkish Green #338b33)*/
 .navbar {
-    background-color: #497897;
+    background-color: #4C7B9A;
 	border-radius: 5px;
     color: white;
     display: flex;
@@ -66,7 +66,7 @@ body {
     font-weight: bold;
 }
 
-/* || Footer */
+/* Footer */
 .footer {
     color: black;
 	font-family: 'Roboto', sans-serif;
@@ -74,6 +74,7 @@ body {
     justify-content: flex-end;
     align-items: center;
     font-size: 16px;
+    padding-bottom: 10px;
 }
 
 .copyright {
@@ -91,7 +92,7 @@ body {
 	justify-content: right;
 }
 
-/* || Homepage */
+/* Homepage */
 .home-page-intro {
     display: flex;
     flex-direction: column;
@@ -185,7 +186,7 @@ body {
     opacity: 70%;
 }
 
-/* || Blog */
+/* Blog */
 .blog-entry {
     display: flex;
     justify-content: center;
@@ -209,12 +210,12 @@ body {
     color: black;
 }
 
-/* || Project */
+/* Project */
 .project-status {
     font-size: 24px;
 }
 
-/* || About */
+/* About */
 .about-body-intro {
     padding-top: 40px;
 }
@@ -258,14 +259,14 @@ body {
 	padding: 10px;
 }
 
-/*|| Mobile View*/
+/* Mobile View*/
 @media all and (max-width: 560px) {
     /*|| Sitewide */
     .canvas {
         margin: 0px;
     }
 
-    /*|| Nav Bar */
+    /* Nav Bar */
     .navbar {
         display: flexbox;
         flex-direction: column;
@@ -304,8 +305,12 @@ body {
     .active {
         display: block;
     }
+    /* Footer*/
+    .footer {
+        padding-bottom: 20px;
+    }
 
-    /*|| Homepage*/
+    /* Homepage*/
     .home-page-intro p {
         margin: 0px !important;
         padding: 0px;
@@ -337,7 +342,7 @@ body {
         justify-content: space-evenly;
     }
 
-    /*|| About*/
+    /* About*/
 
     .about-body-intro {
         flex-direction: column !important;
