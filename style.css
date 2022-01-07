@@ -215,6 +215,27 @@ body {
 }
 
 /* || About */
+.about-body-intro {
+    padding-top: 40px;
+}
+
+.about-body-intro {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 50px;
+}
+
+.about-body-intro p {
+    font-size: 18px;
+    line-height: 1.8;
+    padding: 25px 100px;
+}
+
+.about-body-intro img {
+    border-radius: 5px;
+}
+
 .body-intro-text {
     display: flex;
     flex-direction: column;
@@ -317,6 +338,17 @@ body {
     }
 
     /*|| About*/
+
+    .about-body-intro {
+        flex-direction: column !important;
+        padding-top: 30px;
+        padding-left: 0px;
+    }
+
+    .about-body-intro p {
+        padding: 20px;
+    }
+    
     .contact-list {
         margin: 0px;
     }
