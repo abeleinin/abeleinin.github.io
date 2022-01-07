@@ -1,3 +1,4 @@
+/* || Sitewide */
 * {
     box-sizing: border-box;
     padding: 0;
@@ -16,7 +17,7 @@ body {
     padding: 10px;
 }
 
-/* Beginning of Nav Bar Style (Darkish Blue #4d7fa0) (Darkish Green #338b33)*/
+/* || Nav Bar (Darkish Blue #4d7fa0) (Darkish Green #338b33)*/
 .navbar {
     background-color: #4d7fa0;
 	border-radius: 5px;
@@ -61,67 +62,12 @@ body {
     margin-bottom: 4px;
 }
 
-/* Responsive Nav Bar for Mobile*/
-@media all and (max-width: 560px) {
-    .canvas {
-        margin: 0px;
-    }
-    .navbar {
-        display: flexbox;
-        flex-direction: column;
-        align-items: unset;
-    }
-    .menu {
-        display: block;
-        position: absolute;
-        top: 30px;
-        right: 40px;
-    }
-
-    .nav-list {
-        list-style-type: none;
-        width: 100%;
-        text-align: center;
-        padding-top: 10px;
-        display: none;
-    }
-
-    .nav-list .list-item {
-        display: block;
-        border-top: 1px solid white;
-    }
-
-    .primary-icon {
-        margin-top: 10px;
-        margin-left: 10px;
-    }
-
-    .home-page-intro p {
-        margin: 0px !important;
-    }
-
-    .active {
-        display: block;
-    }
-
-    .body-intro {
-        flex-direction: column !important;
-    }
-    .body-intro img {
-        align-items: center;
-    }
-    .body-links {
-        flex-direction: column !important;
-    }
-    .body-links-block {
-        justify-content: space-between;
-    }
+.navbar .active-page a{
+    color: black;
+    font-weight: bold;
 }
 
-/* End of Nav Bar Style *
-
-/* Beginning of Footer Style */
-
+/* || Footer */
 .footer {
     color: black;
 	font-family: 'Roboto', sans-serif;
@@ -146,13 +92,7 @@ body {
 	justify-content: right;
 }
 
-/* End of Footer Style */
-
-.navbar .active-page a{
-    color: black;
-    font-weight: bold;
-}
-
+/* || Homepage */
 .home-page-intro {
     display: flex;
     flex-direction: column;
@@ -199,8 +139,7 @@ body {
     border-radius: 10px;
 }
 
-/*Homepage Tri Blocks*/
-
+/* Whats New Section on Homepage */ 
 .body-links-title {
     font-size: 24px;
     text-align: center;
@@ -215,7 +154,7 @@ body {
     padding-top: 40px;
     padding-bottom: 160px;
 }
-/* Current: #ededed*/
+
 .body-links-block {
     background-color: #ededed;
     border-radius: 5px;
@@ -251,7 +190,39 @@ body {
     opacity: 70%;
 }
 
-/*About page contact div*/
+/* || Blog */
+.blog-entry {
+    display: flex;
+    justify-content: center;
+    color: black;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    align-items: baseline;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.blog-entry p {
+    font-size: 24px;
+}
+
+.blog-entry a {
+    color: #0000EE;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 24px;
+    text-decoration: underline;
+}
+
+.blog-entry a:hover {
+    color: black;
+}
+
+/* || Project */
+.project-status {
+    font-size: 24px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* || About */
 .body-intro-text {
     display: flex;
     flex-direction: column;
@@ -262,6 +233,7 @@ body {
     text-align: center;
 }
 
+/* Contacts on About */
 .contact-list {
     display: flex;
     list-style-type: none;
@@ -271,4 +243,85 @@ body {
 
 .contact-list .contact-list-item {
 	padding: 10px;
+}
+
+/*|| Mobile View*/
+@media all and (max-width: 560px) {
+    /*|| Sitewide */
+    .canvas {
+        margin: 0px;
+    }
+    /*|| Nav Bar */
+    .navbar {
+        display: flexbox;
+        flex-direction: column;
+        align-items: unset;
+    }
+
+    .menu {
+        display: block;
+        position: absolute;
+        top: 30px;
+        right: 40px;
+    }
+
+    .nav-list {
+        list-style-type: none;
+        width: 100%;
+        text-align: center;
+        padding-top: 10px;
+        display: none;
+    }
+
+    .nav-list .list-item {
+        display: block;
+        border-top: 1px solid white;
+    }
+
+    .primary-icon {
+        margin-top: 10px;
+        margin-left: 10px;
+    }
+    
+    .active {
+        display: block;
+    }
+
+    /*|| Homepage*/
+    .home-page-intro p {
+        margin: 0px !important;
+        padding: 0px;
+    }
+
+    .body-intro {
+        flex-direction: column !important;
+    }
+    
+    .body-intro img {
+        align-self: center;
+    }
+
+    .body-intro p {
+        padding: 20px;
+    }
+
+    .body-links {
+        flex-direction: column !important;
+        align-items: center;
+        padding-bottom: 70px;
+    }
+    
+    .body-links-block {
+        max-width: 300px;
+        margin-bottom: 50px;
+        justify-content: space-evenly;
+    }
+
+    /*|| About*/
+    .contact-list {
+        margin: 0px;
+    }
+    .contact-list-item {
+        padding: 0px !important;
+    }
 }
