@@ -19,7 +19,7 @@ body {
 
 /* || Nav Bar (Darkish Blue #4d7fa0) (Darkish Green #338b33)*/
 .navbar {
-    background-color: #4d7fa0;
+    background-color: #497897;
 	border-radius: 5px;
     color: white;
     display: flex;
@@ -122,6 +122,8 @@ body {
 .body-intro {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    padding-left: 50px;
 }
 
 .body-intro p {
@@ -131,8 +133,7 @@ body {
 }
 
 .body-intro img {
-    padding: 25px;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 /* Whats New Section on Homepage */ 
@@ -291,6 +292,8 @@ body {
 
     .body-intro {
         flex-direction: column !important;
+        padding-top: 20px;
+        padding-left: 0px;
     }
     
     .body-intro img {
