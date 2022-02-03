@@ -16,19 +16,8 @@ body {
 	padding-top: 10px;
     padding: 10px;
     z-index: 3;
-}j
-#animate {
-    animation: lazy-load 2s;
 }
-@keyframes lazy-load {
-    0% {
-        opacity: 0;
-    }
 
-    100% {
-        opacity: 1;
-    }
-}
 .topnav {
     position: relative;
 }
@@ -71,7 +60,10 @@ body {
 
 .footer-wave {
     display: block;
-    bottom: 0;
+    position: absolute;
+    bottom: -744px;
+    left: 0;
+    right: 0;
     z-index: -1;
 }
 
@@ -114,6 +106,15 @@ body {
 }
 
 /* || Footer */
+.footer-alignment {
+    position: absolute;
+    bottom: -730px;
+    left: 20%;
+    right: 20%;
+    max-width: 1200px;
+    margin: 0px auto;
+}
+
 .footer {
     color: black;
 	font-family: 'Roboto', sans-serif;
@@ -152,6 +153,7 @@ body {
 
 .home-page-intro h2 {
     animation: homepage-welcome 1s;
+    padding-bottom: 20px;
 }
 
 @keyframes homepage-welcome {
@@ -181,11 +183,11 @@ body {
     padding: 10px;
     padding-left: 25px;
     text-align: center;
-    animation: homepage-text 1s;
+    animation: homepage-text 2s;
 }
 
 @keyframes homepage-text {
-    50% {
+    0% {
         opacity: 0;
     }
     100% {
@@ -205,12 +207,12 @@ body {
     font-size: 18px;
     line-height: 1.8;
     padding: 25px 100px;
-    animation: homepage-text 1s;
+    animation: homepage-text 2s;
 }
 
 .body-intro img {
     border-radius: 5px;
-    animation: image-load 1s;
+    animation: image-load 2s;
 }
 
 @keyframes image-load {
