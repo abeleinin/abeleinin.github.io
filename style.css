@@ -368,11 +368,21 @@ body {
 
 /*|| Mobile View*/
 @media all and (max-width: 560px) {
+    .canvas {
+        margin: 0px;
+    }
+
+    body {
+        margin-top: 0px;
+    }
+
     /*|| Nav Bar */
     .navbar {
+        display: flex;
         flex-direction: column;
+        align-items: unset;
         animation: none;
-        margin-top: 0px;
+        margin-top: 0px !important;
     }
 
     .right-bracket {
@@ -384,15 +394,17 @@ body {
     }
 
     .menu {
-        padding: 5px;
         display: block;
         position: absolute;
         top: 30px;
         right: 40px;
+        padding: 5px;
     }
 
     .nav-list {
         list-style-type: none;
+        width: 100%;
+        text-align: center;
         display: none;
     }
 
@@ -406,8 +418,8 @@ body {
     }
 
     .active {
-        background-color: #659DBD;
         display: block;
+        background-color: #659DBD;
     }
 
     /*|| Footer*/
