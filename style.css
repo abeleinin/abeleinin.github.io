@@ -99,8 +99,6 @@ body {
 .menu {
     display: none;
     position: absolute;
-    top: -20px;
-    right: 40px;
     padding: 5px;
 }
 
@@ -261,7 +259,7 @@ body {
     padding-bottom: 160px;
 }
 
-.body-links-block {
+.body-links-block /*#ededed*/ {
     background-color: #ededed;
     border-radius: 5px;
     text-align: center;
@@ -402,8 +400,8 @@ body {
     .menu {
         display: block;
         position: absolute;
-        top: 30px;
-        right: 40px;
+        top: 0px;
+        right: 0px;
         padding: 5px;
     }
 
