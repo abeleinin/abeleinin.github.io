@@ -13,18 +13,21 @@
 </head>
 
 <body>
-	<div class="canvas">
+	<div id="topnav">
+		<svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+			<path fill="#659DBD" fill-opacity="1"
+				d="M0,288L40,261.3C80,235,160,181,240,176C320,171,400,213,480,224C560,235,640,213,720,197.3C800,181,880,171,960,181.3C1040,192,1120,224,1200,218.7C1280,213,1360,171,1400,149.3L1440,128L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z">
+			</path>
+		</svg>
 
 		<!--Navbar-->
 		<nav class="navbar">
-			<div>
-				<a href="index.html">
-					<img class="primary-icon" src="photos/tree.png" alt="Tree icon" />
-				</a>
+			<div class="left-bracket">
+				<p>{</p>
 			</div>
 			<ul class="nav-list" id="navi-list">
 				<li class="list-item"><a href="index.html">HOME</a></li>
-				<li class="list-item active-page"><a href="blog.html">BLOG</a></li>
+				<li class="list-item active-page"><a href="blog.html">THOUGHTS</a></li>
 				<li class="list-item"><a href="projects.html">PROJECTS</a></li>
 				<li class="list-item"><a href="AbeLeiningerResume.pdf" target="_blank">RESUME</a></li>
 				<li class="list-item"><a href="about.html">ABOUT</a></li>
@@ -34,8 +37,12 @@
 				<div class="menu-line"></div>
 				<div class="menu-line"></div>
 			</div>
+			<div class="right-bracket">
+				<p>}</p>
+			</div>
 		</nav>
-
+	</div>
+	<div class="canvas">
 		<!--Title Section-->
 		<div class="page-intro">
 			<section>
@@ -58,20 +65,19 @@
 
 		<!--Footer-->
 		<footer class="footer">
-				<div class="copyright">
-					<p>&copy; Abe Leininger 2022</p>
-				</div>
-				<ul class="footer-list">
-					<li class="footer-list-item"><a href="https://www.linkedin.com/in/abe-leininger812" target="_blank"
-							rel="noopener"><img src="symbols/linkedin.png" alt="Linkedin Logo" width="25"
-								height="25"></a>
-					</li>
-					<li class="footer-list-item"><a href="https://github.com/abeleinin" target="_blank"
-							rel="noopener"><img src="symbols/github.png" alt="Github Logo" width="25" height="25"></a>
-					</li>
-					<li class="footer-list-item"><a href="mailto:aleinin@iu.edu"><img src="symbols/mail.png"
-								alt="Envelope Graphic" width="30" height="25"></a></li>
-				</ul>
+			<div class="copyright">
+				<p>&copy; Abe Leininger 2022</p>
+			</div>
+			<ul class="footer-list">
+				<li class="footer-list-item"><a href="https://www.linkedin.com/in/abe-leininger812" target="_blank"
+						rel="noopener"><img src="symbols/linkedin.png" alt="Linkedin Logo" width="25" height="25"></a>
+				</li>
+				<li class="footer-list-item"><a href="https://github.com/abeleinin" target="_blank" rel="noopener"><img
+							src="symbols/github.png" alt="Github Logo" width="25" height="25"></a>
+				</li>
+				<li class="footer-list-item"><a href="mailto:aleinin@iu.edu"><img src="symbols/mail.png"
+							alt="Envelope Graphic" width="30" height="25"></a></li>
+			</ul>
 		</footer>
 	</div>
 </body>
