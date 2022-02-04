@@ -368,11 +368,8 @@ body {
 
 /*|| Mobile View*/
 @media all and (max-width: 560px) {
-    /*|| Sitewide */
-
     /*|| Nav Bar */
     .navbar {
-        display: flexbox;
         flex-direction: column;
         animation: none;
         margin-top: 0px;
@@ -387,16 +384,15 @@ body {
     }
 
     .menu {
+        padding: 5px;
         display: block;
         position: absolute;
-        top: 20px;
+        top: 30px;
         right: 40px;
     }
 
     .nav-list {
         list-style-type: none;
-        width: 100%;
-        text-align: center;
         display: none;
     }
 
@@ -409,15 +405,9 @@ body {
         padding: 20px 130px;
     }
 
-    .primary-icon {
-        margin-top: 10px;
-        margin-left: 10px;
-    }
-    
     .active {
         background-color: #659DBD;
         display: block;
-        text-align: center;
     }
 
     /*|| Footer*/
