@@ -98,6 +98,10 @@ body {
 
 .menu {
     display: none;
+    position: absolute;
+    top: -20px;
+    right: 40px;
+    padding: 5px;
 }
 
 .menu-line {
@@ -398,8 +402,8 @@ body {
     .menu {
         display: block;
         position: absolute;
-        top: 0px;
-        right: 0px;
+        top: 30px;
+        right: 40px;
         padding: 5px;
     }
 
