@@ -561,7 +561,8 @@ body {
         width: 100%;
         text-align: center;
         display: none;
-        z-index: -1;
+        overflow: hidden;
+        z-index: 2;
     }
 
     .nav-list .list-item {
