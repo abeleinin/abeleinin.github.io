@@ -544,9 +544,10 @@ body {
     }
 
     .menu {
-        display: block;
+        display: inline-block;
         position: absolute;
         top: 0px;
+        right: 0px;
     }
 
     .nav-list {
