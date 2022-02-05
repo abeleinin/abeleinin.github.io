@@ -523,7 +523,7 @@ body {
     }
 
     body {
-        margin-top: 0px;
+        margin-top: 0px !important;
     }
 
     /*|| Nav Bar */
@@ -545,7 +545,7 @@ body {
     }
 
     .menu {
-        display: inline-block;
+        display: grid;
         position: absolute;
         top: 0px;
         right: 0px;
