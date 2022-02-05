@@ -277,11 +277,13 @@ body {
 }
 
 .body-links-block h2 {
+    color: black;
     padding-top: 8px;
     padding-bottom: 6px;
 }
 
 .body-links-block p {
+    font-weight: bold;
     padding-top: 5px;
     padding-bottom: 18px;
 }
@@ -292,11 +294,8 @@ body {
 }
 
 .body-links-block a {
+    color: #696969;
     text-decoration: none;
-    font-size: 16px;
-    color: white;
-    padding: 6px 10px;
-    background-color: black;
 }
 
 .body-links-block a:hover {
@@ -359,7 +358,7 @@ body {
     text-align: center;
     text-decoration: underline;
     text-decoration-thickness: 3px;
-    text-underline-offset: 4px;
+    text-underline-offset: 7px;
     font-size: 24px;
     padding-top: 50px;
 }
@@ -378,7 +377,7 @@ body {
 .project-item {
     background-color: #ededed;
     max-width: 306px;
-    padding-bottom: 50px;
+    padding-bottom: 30px;
     border: 3px solid #696969;
     border-radius: 10px;
 }
@@ -402,6 +401,13 @@ body {
     text-align: center;
 }
 
+.project-item h2 {
+    color: black;
+}
+
+.project-item p {
+    padding-top: 10px;
+}
 
 .project-item:hover
 {
@@ -527,8 +533,6 @@ body {
         align-items: unset;
         animation: none;
         margin-top: 0px !important;
-        margin: 0px !important;
-        margin-bottom: 50px !important;
     }
 
     .right-bracket {
@@ -543,8 +547,6 @@ body {
         display: block;
         position: absolute;
         top: 0px;
-        right: 0px;
-        padding: 5px;
     }
 
     .nav-list {
