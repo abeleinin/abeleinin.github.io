@@ -535,7 +535,10 @@ body {
         align-items: unset;
         animation: none;
         margin-top: 0px !important;
-        margin-bottom: 20px !important;
+    }
+
+    .wave {
+        display: none;
     }
 
     .right-bracket {
