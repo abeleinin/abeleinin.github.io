@@ -536,6 +536,10 @@ body {
         animation: none;
         margin-top: 0px !important;
     }
+     
+    .wave {
+        z-index: -2;
+    }
 
     .right-bracket {
         display: none;
@@ -547,6 +551,9 @@ body {
 
     .menu {
         display: block;
+        top: 20px;
+        right: 20px;
+        z-index: 4;
     }
 
     .nav-list {
@@ -554,6 +561,7 @@ body {
         width: 100%;
         text-align: center;
         display: none;
+        z-index: -1;
     }
 
     .nav-list .list-item {
