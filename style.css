@@ -537,8 +537,8 @@ body {
         margin-top: 0px !important;
     }
      
-    .wave {
-        z-index: -2;
+    .none {
+        display: none;
     }
 
     .right-bracket {
@@ -553,7 +553,6 @@ body {
         display: block;
         top: 20px;
         right: 20px;
-        z-index: 4;
     }
 
     .nav-list {
@@ -561,8 +560,6 @@ body {
         width: 100%;
         text-align: center;
         display: none;
-        overflow: hidden;
-        z-index: 2;
     }
 
     .nav-list .list-item {
