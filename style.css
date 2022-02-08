@@ -342,7 +342,7 @@ body {
 }
 
 .blog-date {
-    padding-top: 40px;
+    padding-top: 30px;
     font-weight: bold;
     color: rgb(78, 78, 78);
     font-size: 18px;
@@ -352,6 +352,12 @@ body {
     padding: 70px 120px;
     font-size: 18px;
     line-height: 1.8;
+}
+
+.blog-copy h2 {
+    text-align: center;
+    color: rgb(78, 78, 78);
+    padding: 20px;
 }
 
 /* || Project */
@@ -418,6 +424,57 @@ body {
     -webkit-animation-iteration-count: 1;
     animation-iteration-count: 1;
     opacity: 0.8;
+}
+
+.youtube-logo {
+    background-color: white;
+}
+
+/* || DoubleMap Page*/
+
+.bus-video {
+    width: 50%;
+    height: 50%;
+    display: block;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* || Quotes*/
+
+blockquote {
+    margin: 0;
+}
+
+blockquote p {
+    padding: 10px;
+    background-color: #ededed;
+    border-radius: 5px;
+}
+
+blockquote p::before {
+    content: '\201C';
+}
+
+blockquote p::after{
+    content: '\201D';
+}
+
+figcaption {
+    float: right;
+    padding: 10px;
+}
+
+/* || Videos */
+
+.youtube {
+    margin: auto;
+}
+
+iframe {
+    width: 560px; 
+    height: 315px;
 }
 
 /* || About */
@@ -626,6 +683,15 @@ body {
     
     .blog-copy {
         padding: 40px 20px;
+    }
+
+    .bus-video {
+        width: 100%;
+    }
+
+    iframe {
+        height: 169px;
+        width: 300px;
     }
     
     /*|| About*/
