@@ -67,7 +67,7 @@
 			<p>
 				During this fall, in my Introduction to Computer Science course C211, I created this program to display
 				a live bus map on campus. Here is a breakdown of how I developed this application.
-
+				<br>
 				First, I received the bus location data as a JSON object using the
 				<a target="_blank"
 					href="https://data.bloomington.in.gov/dataset/4186d8e2-c8db-4c2f-95d2-efe9ffa6dfcd/resource/72e98db0-b6df-4260-82f9-18cc0ecff4ff/download/doublemap-application-programming-interface-api--3.pdf">DoubleMap
@@ -166,9 +166,9 @@
 ; Look up values from JSON dictionary
 (define (lookup s lom)
 	(cond [(empty? lom) (error "Error")]
-		[(string=? (member-name (first lom)) s)
-			(member-value (first lom))]
-		[else (lookup s (rest lom))]))
+	  	  [(string=? (member-name (first lom)) s)
+			  (member-value (first lom))]
+		  [else (lookup s (rest lom))]))
 					
 ; Get buses lon, lat, and angle of direction
 (define (project JSON)
