@@ -354,6 +354,10 @@ body {
     line-height: 1.8;
 }
 
+.blog-copy p {
+    padding: 40px ;
+}
+
 .blog-copy h2 {
     text-align: center;
     color: rgb(78, 78, 78);
@@ -683,6 +687,10 @@ iframe {
     
     .blog-copy {
         padding: 40px 20px;
+    }
+
+    .blog-copy p {
+        padding: 5px;
     }
 
     .bus-video {

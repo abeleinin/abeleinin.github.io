@@ -51,7 +51,7 @@
 
 		<div class="blog-date">
 			<p>
-				November 2021
+				October 2021
 			</p>
 		</div>
 
@@ -65,18 +65,165 @@
 
 		<div class="blog-copy">
 			<p>
-				For the final Lab of C211: Introduction to Computer Science we were tasked with implementing a bus
-				tracker using the <a target="_blank"
+				During this fall, in my Introduction to Computer Science course C211, I created this program to display
+				a live bus map on campus. Here is a breakdown of how I developed this application.
+
+				First, I received the bus location data as a JSON object using the
+				<a target="_blank"
 					href="https://data.bloomington.in.gov/dataset/4186d8e2-c8db-4c2f-95d2-efe9ffa6dfcd/resource/72e98db0-b6df-4260-82f9-18cc0ecff4ff/download/doublemap-application-programming-interface-api--3.pdf">DoubleMap
 					API.</a>
+				Here is an example of the JSON’s object literals and their key/value pairs.
 			</p>
 			<pre>
-				<code class="Racket">
-					(define sprite
-					(beside (rectangle 10 6 "solid" "blue")
-							(rectangle 4 6 "solid" "black")))
+				<code class="lang-json">
+{"id":100437,
+"name":"680",
+"lat":39.18037,
+"lon":-86.52717,
+"heading":7,
+"route":819,
+"lastStop":72,
+"fields":{},
+"bus_type":"bus",
+"lastUpdate":1644346555}
 				</code>
 			</pre>
+			<p>
+				For this project, we needed three elements from each item- the longitude and latitude of the bus and the
+				heading value (the angle of directions). Because our screens aren't mapped by cartesian coordinates, I
+				needed to convert the given longitude and latitude into specific pixel locations on the screen.
+				Additionally, because the given coordinates are specific to Bloomington, Indiana, we need to define the
+				scale of our map image as min and max longitude and latitude values.
+
+				This project is coded in <a href="https://racket-lang.org">Racket</a>, which is a dialect of lisp.
+				Racket is a
+				functional programming language and is reliant on recursive functions. Here are some of the function
+				definitions for the program.
+			</p>
+			<pre>
+    			<code class="lang-racket">
+#lang racket
+(require 2htdp/image)
+(require 2htdp/universe)
+(require 2htdp/json)
+(require lang/posn)
+					
+(define url "http://iub.doublemap.com/map/v2/buses")
+(define bloomington-map (bitmap "bloomington-map.png"))
+(define sprite
+	(beside (rectangle 10 6 "solid" "blue")
+			(rectangle 4 6 "solid" "black")))
+(struct world [xmin xmax ymin ymax])
+(struct bus [lon lat dir])
+(define bloomington-view
+	(world -86.52846 -86.49543 39.163165 39.186316))
+(define width 770)
+(define height 697)
+    			</code>
+			</pre>
+			<p>
+				These are necessary packages, variables, and data structures to store necessary data for the program to
+				run. I got the image of the campus from this <a href="https://map.iu.edu/iub/" target="_blank">IU
+					Bloomington Campus Map</a> website. Additionally, I used the
+				2htdp/image library in Racket to create the bus sprite by concatenating two rectangles. The
+				bloomington-view variable defines the max and min values of the longitude and latitude for the campus
+				image. Finally, width and height are the dimensions of the bloomington-map.png image.
+			</p>
+			<pre>
+			<code class="lang-racket">
+; Convert one type of unit to another 
+(define (convert a1 b1 a2 b2 a)
+  (/ (+ (* b1 (- a2 a)) (* b2 (- a a1))) (- a2 a1)))
+
+; Convert Bus coordinates to height and width of screen 
+(define (cartesian->screen->bus w lop)
+  (map (lambda (p)
+         (bus (convert (world-xmin w)
+                       0
+                       (world-xmax w)
+                       width
+                       (bus-lon p))
+              (convert (world-ymin w)
+                       height
+                       (world-ymax w)
+                       0
+                       (bus-lat p))
+              (bus-dir p))) lop))
+			</code>
+		</pre>
+			<p>
+				In this section of code, I define the convert function, which implements a mathematical formula to
+				convert one interval of units to another. For example, (convert 0 0 100 30 50) would return 15 because
+				50 is halfway between 0 and 100 and 15 is halfway between 0 and 30. Next, I define functions that give a
+				list of Bus coordinates, and the given world dimensions convert the adjusted list of bus coordinates.
+				The <a href="http://htdp.org/2018-01-06/Book/part_three.html#(counter._(figure._fig~3aisl-ho-list))"
+					target="_blank">map</a> function in Racket is similar to other map functions it just applies the
+				given function to all
+				elements of the given input. I chose to use a lambda function instead of defining a helper function.
+			</p>
+			<pre>
+				<code class="lang-racket">
+; Look up values from JSON dictionary
+(define (lookup s lom)
+	(cond [(empty? lom) (error "Error")]
+		[(string=? (member-name (first lom)) s)
+			(member-value (first lom))]
+		[else (lookup s (rest lom))]))
+					
+; Get buses lon, lat, and angle of direction
+(define (project JSON)
+	(cond [(empty? JSON) empty]
+		[(cons? JSON)
+			(cons (bus (lookup "lon" (object-members (first JSON)))
+					(lookup "lat" (object-members (first JSON)))
+					(lookup "heading" (object-members (first JSON))))
+				(project (rest JSON)))]))
+					
+; Call API to update bus position
+(define (parse x)
+	(project (read-json/web url)))
+				</code>
+			</pre>
+			<p>
+				This part is pretty boring. It just receives and format information from the DoubleMap API.
+			</p>
+			<pre>
+				<code class="lang-racket">
+; Draw the list of buses onto a background image
+(define (draw-lop lob)
+  (foldr (lambda (p bk)
+           (place-image (rotate (- 450 (bus-dir p)) sprite) (bus-lon p) (bus-lat p) bk)) bloomington-map lob))
+
+; Draw the converted bus values onto the background image
+(define (draw lop)
+  (draw-lop (cartesian->screen->bus bloomington-view lop)))
+
+; Initialize the animation
+(big-bang (parse url)
+  [on-tick parse 3]
+  [to-draw draw]
+  [name "Bloomington DoubleMap in Racket"])
+				</code>
+			</pre>
+			<p>
+				Next, the draw-lop function takes the list of buses and uses the function <a
+					href="https://htdp.org/2018-01-06/Book/part_three.html#(counter._(figure._fig~3aisl-ho-list2))"
+					target="_blank">foldr</a>,
+				which places each bus
+				sprite onto the specified background image. Additionally, the draw function combines two of the
+				previously defined functions to draw a given list of buses with longitude and latitude coordinates onto
+				the background image bloomington-map.png. Finally, I used the package <a
+					href="https://docs.racket-lang.org/teachpack/2htdpuniverse.html?q=big-bang"
+					target="_blank">universe.rkt</a> to
+				create a graphical
+				program. The on-tick parameter specifies which function should be called, and the number 3 specifies how
+				often it is called in seconds. Next, the to-draw parameter specifies what should be drawn on each
+				iteration. In simple terms, the program begins by retrieving a JSON object from the (parse url) function
+				and draws it onto the background image. After three seconds new data is pulled from the API, and the
+				draw function is called updating the program. You can download <a href="https://racket-lang.org/"
+					target="_blank">Racket</a> here and see all the code on my
+				<a href="https://github.com/abeleinin/doublemap-bloomington">GitHub</a>. Thanks for reading, and email me if you have any questions.
+			</p>
 		</div>
 
 		<hr>
